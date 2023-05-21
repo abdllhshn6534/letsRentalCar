@@ -1,0 +1,44 @@
+@use "../../../../assets/scss/variables" as v;
+@use "../../../../assets/scss/mixins" as m;
+
+.who-we-are{
+    p{
+        text-align: justify;
+    }
+
+    img{
+        width:100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .content{
+        @include m.flexbox(column, space-between, center, 1rem);
+    }
+
+    .props{
+        [class^="col-"] {
+            @include m.flexbox(column, center, center, 1rem);
+            
+
+            @media(min-width: 768px){
+                border-right: 1px solid v.$color5;
+
+                &:nth-child(3n){
+                    border-right: none;
+                }
+            }
+
+            svg{
+                color: v.$color2;
+                font-size: 6rem;
+            }
+
+            h4{
+                font-size: 1.4rem;
+                font-weight: 600;
+                color: v.$color5;
+            }
+        }
+    }
+}

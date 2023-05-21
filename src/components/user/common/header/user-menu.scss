@@ -1,0 +1,34 @@
+@use "../../../../assets/scss/variables" as v;
+@use "../../../../assets/scss/mixins" as m;
+
+.user-menu {
+  @include m.flexbox($gap: 0.5rem);
+
+  .dropdown {
+    @media (max-width: 992px) {
+      width: 100%;
+    }
+
+    button {
+      @media (max-width: 450px) {
+        width: 100%;
+      }
+    }
+  }
+
+  .dropdown-menu {
+    @media (max-width: 992px) {
+      position: static;
+      border: none;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+  }
+
+  .dropdown-divider {
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+}

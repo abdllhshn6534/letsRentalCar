@@ -1,0 +1,20 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+.dashboard {
+  text-align: center;
+  [class^="col"] {
+    background-color: v.$color3;
+    color: v.$color2;
+    margin: 1rem;
+
+    h2 {
+      color: v.$color1;
+    }
+  }
+
+  .carousel-control-next-icon,
+  .carousel-control-prev-icon {
+    background-color: v.$color3;
+  }
+}

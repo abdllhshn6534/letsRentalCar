@@ -1,0 +1,49 @@
+@use "../../../../assets/scss/variables" as v;
+@use "../../../../assets/scss/mixins" as m;
+
+.page-header{
+    @include m.bg-image("../../../../assets/img/about/bg.jpg");
+    @include m.flexbox($justify-content: center, $align-items: flex-end);
+    height: 280px;
+    padding-bottom: 1rem;
+    position: relative;
+
+    &::after{
+        content: "";
+        position: absolute;
+        top:0; left:0; right:0; bottom:0;
+        background-color: v.$color5;
+        opacity: 0.7;
+    }
+    
+
+    h1{
+        color: v.$color2;
+        z-index: 1;
+        font-size: 4rem;
+        font-weight: 700;
+        text-shadow: 0 0 30px v.$color1;
+
+        @media(max-width: 600px){
+            font-size: 3rem;
+        }
+
+        @media(max-width: 500px){
+            font-size: 2.5rem;
+        }
+
+        @media(max-width: 400px){
+            font-size: 2rem;
+        }
+
+        &::after,
+        &::before{
+            content:"...";
+            opacity: 0.5;
+
+            @media(max-width: 600px){
+                content:""
+            }
+        }
+    }
+}

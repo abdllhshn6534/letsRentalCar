@@ -1,0 +1,26 @@
+@use "../../../assets/scss/variables" as v;
+
+.image-area{
+    background-color: v.$color4;
+    position: relative;
+    min-height: 200px;
+
+    label{
+        margin:0;
+        background-color: v.$color1;
+        color: v.$color2;
+        position:absolute;
+        bottom:0;
+        left:0; right:0;
+        text-align: center;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+
+    .image-error{
+        position: absolute;
+        left:50%;
+        top:40%;
+        transform: translate(-50%);
+    }
+}

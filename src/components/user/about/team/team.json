@@ -1,0 +1,5 @@
+[
+    { "id":1, "name": "Tad Oscar", "title":"Sales Spacialist", "image": "team1.jpg"},
+    { "id":2, "name": "Jewel Jody", "title":"Sales Spacialist", "image": "team3.jpg"},
+    { "id":3, "name": "Axel Kodey", "title":"Sales Spacialist", "image": "team2.jpg"}
+]

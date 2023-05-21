@@ -1,0 +1,51 @@
+@use "../../../../assets/scss/variables" as v;
+@use "../../../../assets/scss/mixins" as m;
+
+footer{
+    background-color: v.$color1;
+    padding: 5rem 0;
+    color: v.$color2;
+
+    @media(max-width:992px ){
+        text-align: center;
+    }
+
+    img{
+        margin-bottom: 2rem;
+    }
+
+    ul{
+        @include m.reset-list();
+        @include m.flexbox($direction: column, $gap: 1rem);
+
+        @media(max-width:992px ){
+            @include m.flexbox($direction: column, $align-items:center, $gap: 1rem);
+        }
+
+        a{
+            color: v.$color4;
+            text-decoration: none;
+
+            &:hover{
+                color: v.$color2;
+            }
+
+            svg{
+                font-size: 1.2rem;
+            }
+
+            &.active{
+                color: v.$color2;
+            }
+        }
+
+        
+    }
+
+    h2{
+        font-weight: 800;
+        font-size: 1.7rem;
+        margin-bottom: 2rem;
+        color: v.$color4;
+    }
+}

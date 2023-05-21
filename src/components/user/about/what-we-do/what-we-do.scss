@@ -1,0 +1,71 @@
+@use "../../../../assets/scss/variables" as v;
+@use "../../../../assets/scss/mixins" as m;
+
+
+.what-we-do{
+    background-color: v.$color2;
+    color: v.$color5;
+
+    img{
+        object-fit:cover;
+        height: 100%;
+        width: auto;
+    }
+
+    h2{
+        color: v.$color1;
+    }
+
+    .props{
+        [class^="col-"]{
+            @include m.flexbox($align-items: center, $gap:1rem);
+            padding: 2rem;
+            border-bottom: 1px dotted v.$color5;
+            border-right: none;
+
+            @media(min-width: 576px){
+                &:nth-child(odd){
+                    border-right: 1px dotted v.$color5;
+                }
+            }
+
+            @media(min-width: 1200px){
+                border-right: 1px dotted v.$color5;
+                &:nth-child(3n){
+                    border-right: none;
+                }
+            }
+
+            svg{
+                color: v.$color1;
+                font-size: 3rem;
+                flex-shrink: 0;
+            }
+    
+            span{
+    
+            }
+        
+        
+        }
+
+        
+
+    }
+
+
+
+   > [class="row"]{
+
+      > [class^="col-"]{
+       
+        &:last-child{
+            @include m.flexbox(column, space-between);
+            padding: 3rem;
+        }
+
+      }
+    
+        
+    }
+}

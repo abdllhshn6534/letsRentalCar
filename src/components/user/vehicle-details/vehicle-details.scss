@@ -1,0 +1,37 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+.vehicle-details{
+    .title{
+        @include m.flexbox(row, space-between, center, 0);
+    }
+    .card{
+        img{
+            border-radius: 2rem;
+        }
+    }
+
+    ul{
+        @include m.reset-list();
+        @include m.flexbox(row, space-between, center, 2rem);
+        text-align: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+
+        li{
+            flex: 0 0 150px;
+            @include m.flexbox(column, flex-start, center, 1rem);
+            color: v.$color2;
+
+            @media (max-width: 400px) {
+                flex-basis: 100px;
+            }
+
+            svg{
+                color: v.$color1;
+                font-size:3rem;
+            }
+
+        }
+    }
+}

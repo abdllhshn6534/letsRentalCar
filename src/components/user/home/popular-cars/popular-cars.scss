@@ -1,0 +1,11 @@
+@use "../../../../assets/scss/variables" as v;
+
+.popular-cars {
+  [class^="col-"]:nth-child(2n) {
+    .vehicle-card {
+      .image {
+        background-image: linear-gradient(-65deg, v.$color5, v.$color6);
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@use "../../../../assets/scss/variables" as v;
+@use "../../../../assets/scss/mixins" as m;
+
+.best-offers {
+  .offers {
+    position: relative;
+    padding: 6rem 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      @include m.bg-image("../../../../assets/img/about/bg.jpg");
+      opacity: 0.1;
+      z-index: -1;
+    }
+
+    [class^="col-"] {
+      @include m.flexbox(column, space-between, center, 2rem);
+    }
+
+    [class^="col-"]:nth-child(2) {
+      justify-content: center;
+
+      @media (max-width: 992px) {
+        transform: rotate(90deg);
+        margin-top: -2rem;
+        margin-bottom: -5rem;
+        img {
+          width: 35vw;
+        }
+      }
+    }
+  }
+}

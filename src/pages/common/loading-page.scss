@@ -1,0 +1,21 @@
+@use "../../assets/scss/variables" as v;
+@use "../../assets/scss/mixins" as m;
+
+.loading-page {
+  background-color: v.$color1;
+  width: 100vw;
+  height: 100vh;
+  @include m.flexbox(row, center, center, 0);
+
+  img{
+    width:200px;
+    height: auto;
+  }
+
+  .spinner-border {
+    width: 15rem;
+    height: 15rem;
+    color: white !important;
+    position: absolute;
+  }
+}

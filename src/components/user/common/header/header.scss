@@ -1,0 +1,103 @@
+@use "../../../../assets/scss/variables" as v;
+@use "../../../../assets/scss/mixins" as m;
+
+$breakpoint: 992px;
+
+.header{
+    @include m.flexbox($align-items: stretch);
+    background-color: v.$color4 ;
+
+    @media(max-width: $breakpoint){
+        @include m.flexbox(column, space-between, stretch);
+        position: relative;
+
+    }
+
+    .logo{
+        background-color: v.$color1;
+    }
+
+    .menus{
+        @include m.flexbox(column, center, stretch);
+        flex:1;
+        padding-left:1rem;
+
+             
+
+        .topbar{
+            @include m.flexbox(row, space-between, center, 1rem);
+            border-bottom: 1px dotted v.$color3;
+            flex:1;
+
+            @media(max-width: $breakpoint){
+                border-bottom: 0;
+                padding:1rem;
+            }
+            
+
+            ul{
+                @include m.reset-list();
+
+                a{
+                    @include m.flexbox($align-items: center, $gap:0.5rem);
+                    text-decoration: none;
+                }
+
+                &.contact-bar{
+                    @include m.flexbox($gap:1rem);
+                    flex:2;
+                    font-size: 0.8rem;
+                    a{
+                        color: v.$color3;
+                    }
+                }
+
+                &.social-bar{
+                    @include m.flexbox($justify-content: flex-end, $gap:1rem);
+                    flex:1;
+                    padding-right: 1rem;
+                    font-size: 1rem;
+                }
+
+
+            }
+
+        
+        
+        }
+
+        .menubar{
+            flex:1;
+
+            @media(max-width: $breakpoint){
+                position: absolute;
+                top:1rem;
+                right:1rem;
+                left:1rem;
+
+                .container{
+                    justify-content: flex-end;
+                }
+
+                .navbar-collapse{
+                    background-color: v.$color4;
+                    padding:1rem;
+                    margin-top: 3rem;
+                }
+            }
+
+            a{
+                @include m.flexbox($align-items: center, $gap:0.5rem);
+            }
+
+            .navbar-toggler{
+                background-color: v.$color2;
+            }
+
+       
+        }
+
+
+    }
+}
+

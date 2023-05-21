@@ -1,0 +1,70 @@
+@use "../../../../assets/scss/variables" as v;
+@use "../../../../assets/scss/mixins" as m;
+
+
+.offer-item{
+    @include m.flexbox($gap:1rem);
+
+    &.right{
+        flex-direction: row-reverse;
+        text-align: right;
+
+        @media(max-width:992px){
+            flex-direction: row;
+            text-align: left;
+        }
+
+    }
+
+    
+
+    .icon{
+        color: v.$color2;
+        background-color: white;
+        padding: 1.5rem;
+        box-shadow: 3px 3px 5px v.$color4;
+        font-size: 2rem;
+    }
+
+    .content{
+        h3{
+            border-bottom: 1px dotted v.$color2;
+            padding-bottom: 1rem;
+            color: v.$color1;
+            position: relative;
+
+            &::after{
+                content:"";
+                width: 1.3rem;
+                height: 1.3rem;
+                border-radius: 1rem;
+                background-color: v.$color2;
+                position: absolute;
+                right:0;
+                bottom:0;
+                transform: translateY(50%);
+                border:5px solid white;
+            }
+
+            &.right{
+                &::after{
+                    left:0;
+                    right:auto;
+
+                    @media(max-width:992px){
+                        left:auto;
+                        right:0;
+                    }
+                }
+            }
+
+
+        }
+
+        p{
+            font-size: 0.9rem;
+            color: v.$color3;
+            padding-top: 1rem;
+        }
+    }
+}
